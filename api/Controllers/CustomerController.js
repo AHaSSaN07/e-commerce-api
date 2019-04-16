@@ -6,7 +6,7 @@ const Customer = require('../Models/CustomerModel')
 const router = express.Router();
 
 
-function validateCustoemr(customer) {
+function validateCustomer(customer) {
     const schema = {
         name: joi.string().min(3).required(),
         email: joi.string().required(),
@@ -50,7 +50,7 @@ router.post('/add', async (req, res) => {
         
         const newCustomer = new Customer({ ...cus });
         // console.log(validateCustoemr(cus).error)
-        if (!validateCustoemr(cus).error) {
+        if (!validateCustomer(cus).error) {
             const response = await newCustomer.save()
             res.send(response)
         }
@@ -76,7 +76,7 @@ router.delete('/:id',async (req, res) => {
 
 router.put('/:id',async (req, res) => {
     const { id } = req.params
-    if (!validateCustoemr(req.body).error) {
+    if (!validateCustomer(req.body).error) {
         const response = await Customer.findByIdAndUpdate(id, { ...req.body })
         res.send(response)
     }

@@ -1,6 +1,9 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const CustomerController = require('./api/Controllers/CustomerController')
+const ProductController = require('./api/Controllers/ProductsController')
+
+
 
 const app = express()
 
@@ -10,7 +13,7 @@ app.use(express.json());
 
 //api here
 app.use('/api/customers',CustomerController);
-
+app.use('/api/products',ProductController);
 
 
 
