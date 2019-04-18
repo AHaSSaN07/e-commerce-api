@@ -1,8 +1,8 @@
 const express = require('express');
 const joi = require('joi')
 const Product = require('../Models/ProductsModel')
-
-
+const auth = require('../middlewares/auth')
+ 
 const router = express.Router();
 
 function validateProduct(customer) {
@@ -49,8 +49,10 @@ router.get('/:id', async (req, res) => {
 
 
 
-router.post('/add', async (req, res) => {
+router.post('/add', auth,async (req, res) => {
     try {
+        
+
         const product = req.body;
         console.log(product)
         const newproduct = new Product({ ...product });
@@ -68,7 +70,7 @@ router.post('/add', async (req, res) => {
 })
 
 
-router.delete('/:id',async (req, res) => {
+router.delete('/:id', auth,async (req, res) => {
     try {
         const { id } = req.params;
         // console.log(id)
@@ -82,7 +84,7 @@ router.delete('/:id',async (req, res) => {
 
 
 
-router.put('/:id',async (req, res) => {
+router.put('/:id', auth,async (req, res) => {
     const { id } = req.params
     console.log(id)
     if (!validateProduct(req.body).error) {
