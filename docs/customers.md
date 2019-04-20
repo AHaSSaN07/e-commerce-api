@@ -2,7 +2,7 @@
 
 # get
 
-**URL** : `/api/Customers/` to get all users
+**URL** : `/api/Customers/` to get all Customers
 
 **Method** : `GET`
 
@@ -34,7 +34,7 @@
 
 # POST 
 
-**URL** : `/api/Customers/add` to add a new user
+**URL** : `/api/Customers/add` to add a new Customer
 
 **Method** : `POST`
 
@@ -59,7 +59,7 @@ the created customer.
 ```
 # PUT 
 
-**URL** : `/api/Customers/:id` to edit a user
+**URL** : `/api/Customers/:id` to edit a Customer
 
 **Method** : `PUT`
 
@@ -85,7 +85,7 @@ the edited customer.
 
 # DELETE 
 
-**URL** : `/api/Customers/:id` to delete a user
+**URL** : `/api/Customers/:id` to delete a Customer
 
 **Method** : `DELETE`
 
