@@ -61,7 +61,7 @@ the created product.
 ```
 # PUT 
 
-**URL** : `/api/Products/:id` to edit a user
+**URL** : `/api/Products/:id` to edit a product
 
 **Method** : `PUT`
 
@@ -88,7 +88,7 @@ the edited product.
 
 # DELETE 
 
-**URL** : `/api/products/:id` to delete a user
+**URL** : `/api/products/:id` to delete a product
 
 **Method** : `DELETE`
 
