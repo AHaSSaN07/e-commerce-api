@@ -44,7 +44,7 @@ router.get('/:id', async (req, res) => {
     }
 })
 
-router.post('/add', auth, async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
         const cus = req.body;
         

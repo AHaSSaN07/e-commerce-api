@@ -6,15 +6,15 @@ const UserController = require('./api/Controllers/UserController')
 const auth = require('./api/Controllers/auth')
 const config = require('config');
 const app = express()
-
+const cors = require('cors')
 console.log( config.get('jwtPrivateKey'))
 if (!config.get('jwtPrivateKey')) {
     console.error('FATAL ERROR: jwtPrivateKey is not defined');
     process.exit(1);
   }
 
+app.use(cors())
 app.use(express.json());
-
 
 
 //api here
